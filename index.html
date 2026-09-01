@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="topbar">
       <div class="container topbar__inner">
         <p>Licensed builders for homes, renovations, extensions, and commercial work.</p>
@@ -23,7 +24,7 @@
         <a class="brand" href="index.html" aria-label="Royal Builders Australia home">
           <img class="brand__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia">
         </a>
-        <button class="menu-button" aria-label="Open navigation">Menu</button>
+        <button class="menu-button" aria-expanded="false" aria-label="Open navigation">Menu</button>
         <div class="navlinks">
           <a class="is-active" href="index.html">Home</a>
           <a href="services.html">Services</a>
@@ -34,10 +35,10 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main-content">
       <section class="home-hero">
         <div class="home-hero__media">
-          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.04 AM.jpeg" alt="Royal Builder Australia residential project">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.04 AM.jpeg" alt="Royal Builder Australia residential project" fetchpriority="high">
         </div>
         <div class="hero-logo-orbit" aria-label="Royal Builders Australia">
           <div class="hero-logo-prism">
@@ -94,7 +95,7 @@
               <li>Quality checks before handover</li>
             </ul>
           </div>
-          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.03 AM.jpeg" alt="Finished building work by Royal Builder Australia">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.03 AM.jpeg" alt="Finished building work by Royal Builder Australia" loading="lazy">
         </div>
       </section>
 
@@ -143,5 +144,6 @@
         <div class="container">Copyright &copy; 2026 Royal Builder Australia. All rights reserved.</div>
       </div>
     </footer>
+    <script src="script.js" defer></script>
   </body>
 </html>

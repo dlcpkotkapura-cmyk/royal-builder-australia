@@ -19,6 +19,26 @@
   box-sizing: border-box;
 }
 
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: var(--deep-crimson);
+  color: var(--white);
+  font-weight: 800;
+  transition: top 180ms ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 140px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -846,6 +866,21 @@ img {
   border-color: var(--deep-crimson);
 }
 
+.form-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-status--success {
+  color: #1c7c3c;
+}
+
+.form-status--error {
+  color: var(--deep-crimson);
+}
+
 .registration-panel {
   margin-top: 26px;
   padding: 22px;
@@ -1210,12 +1245,52 @@ img {
     display: none;
   }
 
+  .navbar {
+    position: sticky;
+  }
+
   .navlinks {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    z-index: 15;
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 4px solid var(--deep-crimson);
+    box-shadow: 0 24px 40px rgba(18, 43, 94, 0.15);
+  }
+
+  .navbar.is-open .navlinks {
+    display: flex;
+  }
+
+  .navlinks a {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .navlinks a::after {
+    display: none;
+  }
+
+  .navlinks a.is-active {
+    background: var(--soft);
   }
 
   .menu-button {
     display: block;
+    position: relative;
+    z-index: 20;
+  }
+
+  .navbar.is-open .menu-button {
+    background: var(--deep-crimson);
+    color: var(--white);
   }
 
   .service-detail__grid,
