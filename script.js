@@ -62,7 +62,7 @@ if (form) {
         statusEl.className = "form-status form-status--error";
       }
     } catch (err) {
-      statusEl.textContent = "Network error. Please try again or email hello@royalbuilder.com.au.";
+      statusEl.textContent = "Network error. Please try again or email info@royalbuilder.com.au.";
       statusEl.className = "form-status form-status--error";
     } finally {
       submitBtn.disabled = false;
