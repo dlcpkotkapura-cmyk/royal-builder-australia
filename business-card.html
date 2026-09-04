@@ -6,13 +6,24 @@
     <nav class="navbar" aria-label="Primary navigation"><div class="container navbar__inner"><a class="brand" href="index.html" aria-label="Royal Builders Australia home"><img class="brand__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia"></a><button class="menu-button" aria-expanded="false" aria-label="Open navigation">Menu</button><div class="navlinks"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a class="is-active" href="about.html">About</a><a href="contact.html">Contact</a></div></div></nav>
     <main id="main-content">
       <section class="bcard" aria-label="Digital business card">
-        <div class="bcard__card">
-          <img class="bcard__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia">
-          <h1 class="bcard__company">Royal Builders Australia</h1>
-          <div class="bcard__person">
-            <p class="bcard__name">Gurjeevan Sidhu</p>
-            <p class="bcard__title">Chief Executive Officer</p>
+        <div class="bcard__card bcard__card--animate">
+
+          <div class="bcard__header">
+            <div class="bcard__avatar">
+              <img class="bcard__headshot" src="house images/gurjeevan-headshot.jpg" alt="Gurjeevan Sidhu, CEO of Royal Builders Australia">
+            </div>
+            <img class="bcard__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia">
+            <h1 class="bcard__company">Royal Builders Australia</h1>
+            <div class="bcard__person">
+              <p class="bcard__name">Gurjeevan Sidhu</p>
+              <p class="bcard__title">Chief Executive Officer</p>
+            </div>
           </div>
+
+          <a class="bcard__save-btn" id="save-vcard" href="#" download="Gurjeevan_Sidhu_Royal_Builders.vcf" aria-label="Save Gurjeevan Sidhu's contact to your phone">
+            <span aria-hidden="true">&#128190;</span> Save to Contacts
+          </a>
+
           <div class="bcard__details">
             <a class="bcard__row" href="tel:+61406660915">
               <span class="bcard__icon" aria-hidden="true">&#9742;</span>
@@ -28,13 +39,23 @@
             </a>
           </div>
 
+          <div class="bcard__services">
+            <p class="bcard__services-label">What We Do</p>
+            <div class="bcard__services-list">
+              <span class="bcard__tag">Home Design</span>
+              <span class="bcard__tag">Commercial Fit-outs</span>
+              <span class="bcard__tag">Knockdown Rebuild</span>
+              <span class="bcard__tag">Extensions</span>
+            </div>
+          </div>
+
           <div class="bcard__qr-group">
             <div class="bcard__qr">
-              <img src="house images/whatsapp-qr.png" alt="Scan to chat on WhatsApp">
+              <img src="house images/gurjeevan what's app.jpeg" alt="Scan to chat on WhatsApp">
               <p>WhatsApp</p>
             </div>
             <div class="bcard__qr">
-              <img src="house images/wechat-qr.png" alt="Scan to add on WeChat">
+              <img src="house images/gurjeevan we chat.jpeg" alt="Scan to add on WeChat">
               <p>WeChat</p>
             </div>
           </div>
@@ -43,44 +64,73 @@
             <p class="bcard__share-label">Share this card</p>
             <div class="bcard__share-btns">
               <a class="bcard__share-btn bcard__share-btn--whatsapp" id="share-whatsapp" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-                <span aria-hidden="true">&#8883;</span> WhatsApp
+                <svg class="bcard__share-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.855L.057 23.714l5.987-1.55A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.92 0-3.76-.516-5.35-1.44l-.38-.23-3.55.93.95-3.46-.25-.39A9.78 9.78 0 012.18 12c0-5.42 4.4-9.82 9.82-9.82S21.82 6.58 21.82 12s-4.4 9.82-9.82 9.82z"/></svg>
+                WhatsApp
               </a>
               <button class="bcard__share-btn bcard__share-btn--wechat" id="share-wechat" aria-label="Show WeChat QR code">
-                <span aria-hidden="true">&#9783;</span> WeChat
+                <svg class="bcard__share-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05a6.127 6.127 0 01-.256-1.738c0-3.573 3.299-6.468 7.37-6.468.258 0 .513.015.765.037C16.577 4.79 12.937 2.188 8.691 2.188zm-2.71 4.908a1.003 1.003 0 110 2.006 1.003 1.003 0 010-2.006zm5.42 0a1.003 1.003 0 110 2.006 1.003 1.003 0 010-2.006z"/><path d="M23.997 15.437c0-3.2-3.299-5.793-7.37-5.793-4.07 0-7.37 2.593-7.37 5.793s3.299 5.793 7.37 5.793c.93 0 1.82-.14 2.64-.386a.724.724 0 01.599.082l1.589.93a.272.272 0 00.14.046c.134 0 .242-.11.242-.246 0-.06-.024-.12-.04-.178l-.326-1.234a.492.492 0 01.178-.554c1.528-1.122 2.37-2.748 2.37-4.254zm-9.524-1.14a.837.837 0 110-1.673.837.837 0 010 1.673zm4.308 0a.837.837 0 110-1.673.837.837 0 010 1.673z"/></svg>
+                WeChat
               </button>
               <button class="bcard__share-btn bcard__share-btn--tiktok" id="share-tiktok" aria-label="Share on TikTok">
-                <span aria-hidden="true">&#9835;</span> TikTok
+                <svg class="bcard__share-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13.2a8.19 8.19 0 004.77 1.52V11.3a4.85 4.85 0 01-.81-.07V6.69h1.62z"/></svg>
+                TikTok
               </button>
               <button class="bcard__share-btn bcard__share-btn--copy" id="share-copy" aria-label="Copy link to clipboard">
-                <span aria-hidden="true">&#128279;</span> Copy Link
+                <svg class="bcard__share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                Copy Link
               </button>
             </div>
             <p class="bcard__copy-msg" id="copy-msg" role="status" aria-live="polite"></p>
+          </div>
+
+          <div class="bcard__footer-note">
+            <p>Licensed builders for homes, renovations, extensions, and commercial work across Victoria.</p>
           </div>
         </div>
       </section>
     </main>
     <script>
-      const cardUrl = encodeURIComponent(window.location.href);
-      const cardText = encodeURIComponent('Royal Builders Australia — Gurjeevan Sidhu, CEO | +61 406 660 915 | royalbuilder.com.au');
-      document.getElementById('share-whatsapp').href = 'https://wa.me/?text=' + cardText + '%20' + cardUrl;
-      document.getElementById('share-tiktok').addEventListener('click', async function() {
-        if (navigator.share) {
-          try { await navigator.share({ title: 'Royal Builders Australia', text: 'Business card — Gurjeevan Sidhu, CEO', url: window.location.href }); } catch(e) {}
-        } else {
-          await navigator.clipboard.writeText(window.location.href);
-          document.getElementById('copy-msg').textContent = 'Link copied! Open TikTok and paste it in a message.';
-        }
-      });
-      document.getElementById('share-copy').addEventListener('click', async function() {
-        await navigator.clipboard.writeText(window.location.href);
-        document.getElementById('copy-msg').textContent = 'Link copied to clipboard!';
-      });
-      document.getElementById('share-wechat').addEventListener('click', function() {
-        document.querySelector('.bcard__qr-group').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        document.querySelectorAll('.bcard__qr')[1].classList.add('bcard__qr--highlight');
-        setTimeout(function() { document.querySelectorAll('.bcard__qr')[1].classList.remove('bcard__qr--highlight'); }, 2000);
-      });
+      (function() {
+        var msg = document.getElementById('copy-msg');
+
+        // --- vCard download ---
+        var vcard = 'BEGIN:VCARD\nVERSION:3.0\nFN:Gurjeevan Sidhu\nN:Sidhu;Gurjeevan;;;\nORG:Royal Builders Australia\nTITLE:Chief Executive Officer\nTEL;TYPE=CELL:+61406660915\nEMAIL;TYPE=INTERNET:info@royalbuilder.com.au\nURL:https://royalbuilder.com.au\nEND:VCARD';
+        var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        document.getElementById('save-vcard').href = url;
+
+        // --- WhatsApp share ---
+        var cardText = encodeURIComponent('Royal Builders Australia \u2014 Gurjeevan Sidhu, CEO | +61 406 660 915 | royalbuilder.com.au');
+        var cardUrl = encodeURIComponent(window.location.href);
+        document.getElementById('share-whatsapp').href = 'https://wa.me/?text=' + cardText + '%20' + cardUrl;
+
+        // --- Native share (TikTok, WeChat, anything) ---
+        document.getElementById('share-tiktok').addEventListener('click', function() {
+          if (navigator.share) {
+            navigator.share({ title: 'Royal Builders Australia', text: 'Gurjeevan Sidhu, CEO \u2014 Royal Builders Australia', url: window.location.href }).catch(function(){});
+          } else {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+              msg.textContent = 'Link copied! Open TikTok and paste it in a message.';
+            });
+          }
+        });
+
+        // --- Copy link ---
+        document.getElementById('share-copy').addEventListener('click', function() {
+          navigator.clipboard.writeText(window.location.href).then(function() {
+            msg.textContent = 'Link copied to clipboard!';
+          });
+        });
+
+        // --- WeChat QR scroll ---
+        document.getElementById('share-wechat').addEventListener('click', function() {
+          var qrGroup = document.querySelector('.bcard__qr-group');
+          qrGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          var wechatQr = document.querySelectorAll('.bcard__qr')[1];
+          wechatQr.classList.add('bcard__qr--highlight');
+          setTimeout(function() { wechatQr.classList.remove('bcard__qr--highlight'); }, 2000);
+        });
+      })();
     </script>
     <footer class="footer"><div class="container footer__grid"><section><img class="footer__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia"><h2>About Us</h2><p>Royal Builders Australia delivers practical, well-managed construction across Victoria.</p><ul class="registration-list"><li>Domestic Builder Individual, DB-U 102149</li><li>Commercial Builder Individual, CB-L 100739</li></ul></section><section><h2>Quick Links</h2><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="business-card.html">Digital Business Card</a></li></ul></section><section><h2>Keep in Touch</h2><p>ROYAL BUILDERS AUSTRALIA PTY LTD</p><p>Melbourne, Australia</p><p>+61 406 660 915</p><p>info@royalbuilder.com.au</p></section></div><div class="footer__bottom"><div class="container">Copyright &copy; 2026 Royal Builders Australia. All rights reserved.</div></div></footer>
     <script src="script.js" defer></script>
