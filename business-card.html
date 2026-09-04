@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Royal Builders Australia | Digital Business Card</title><meta name="description" content="Digital business card for Gurjeevan Sidhu, CEO - Royal Builders Australia."><link rel="stylesheet" href="styles.css"></head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav class="navbar" aria-label="Primary navigation"><div class="container navbar__inner"><a class="brand" href="index.html" aria-label="Royal Builders Australia home"><img class="brand__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia"></a><button class="menu-button" aria-expanded="false" aria-label="Open navigation">Menu</button><div class="navlinks"><a href="index.html">Home</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a class="is-active" href="about.html">About</a><a href="contact.html">Contact</a></div></div></nav>
+    <main id="main-content">
+      <section class="bcard" aria-label="Digital business card">
+        <div class="bcard__card">
+          <img class="bcard__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia">
+          <h1 class="bcard__company">Royal Builders Australia</h1>
+          <div class="bcard__person">
+            <p class="bcard__name">Gurjeevan Sidhu</p>
+            <p class="bcard__title">Chief Executive Officer</p>
+          </div>
+          <div class="bcard__details">
+            <a class="bcard__row" href="tel:+61406660915">
+              <span class="bcard__icon" aria-hidden="true">&#9742;</span>
+              <span>+61 406 660 915</span>
+            </a>
+            <a class="bcard__row" href="mailto:info@royalbuilder.com.au">
+              <span class="bcard__icon" aria-hidden="true">&#9993;</span>
+              <span>info@royalbuilder.com.au</span>
+            </a>
+            <a class="bcard__row" href="https://royalbuilder.com.au" target="_blank" rel="noopener">
+              <span class="bcard__icon" aria-hidden="true">&#9741;</span>
+              <span>royalbuilder.com.au</span>
+            </a>
+          </div>
+
+          <div class="bcard__qr-group">
+            <div class="bcard__qr">
+              <img src="house images/whatsapp-qr.png" alt="Scan to chat on WhatsApp">
+              <p>WhatsApp</p>
+            </div>
+            <div class="bcard__qr">
+              <img src="house images/wechat-qr.png" alt="Scan to add on WeChat">
+              <p>WeChat</p>
+            </div>
+          </div>
+
+          <div class="bcard__share">
+            <p class="bcard__share-label">Share this card</p>
+            <div class="bcard__share-btns">
+              <a class="bcard__share-btn bcard__share-btn--whatsapp" id="share-whatsapp" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+                <span aria-hidden="true">&#8883;</span> WhatsApp
+              </a>
+              <button class="bcard__share-btn bcard__share-btn--wechat" id="share-wechat" aria-label="Show WeChat QR code">
+                <span aria-hidden="true">&#9783;</span> WeChat
+              </button>
+              <button class="bcard__share-btn bcard__share-btn--tiktok" id="share-tiktok" aria-label="Share on TikTok">
+                <span aria-hidden="true">&#9835;</span> TikTok
+              </button>
+              <button class="bcard__share-btn bcard__share-btn--copy" id="share-copy" aria-label="Copy link to clipboard">
+                <span aria-hidden="true">&#128279;</span> Copy Link
+              </button>
+            </div>
+            <p class="bcard__copy-msg" id="copy-msg" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const cardUrl = encodeURIComponent(window.location.href);
+      const cardText = encodeURIComponent('Royal Builders Australia — Gurjeevan Sidhu, CEO | +61 406 660 915 | royalbuilder.com.au');
+      document.getElementById('share-whatsapp').href = 'https://wa.me/?text=' + cardText + '%20' + cardUrl;
+      document.getElementById('share-tiktok').addEventListener('click', async function() {
+        if (navigator.share) {
+          try { await navigator.share({ title: 'Royal Builders Australia', text: 'Business card — Gurjeevan Sidhu, CEO', url: window.location.href }); } catch(e) {}
+        } else {
+          await navigator.clipboard.writeText(window.location.href);
+          document.getElementById('copy-msg').textContent = 'Link copied! Open TikTok and paste it in a message.';
+        }
+      });
+      document.getElementById('share-copy').addEventListener('click', async function() {
+        await navigator.clipboard.writeText(window.location.href);
+        document.getElementById('copy-msg').textContent = 'Link copied to clipboard!';
+      });
+      document.getElementById('share-wechat').addEventListener('click', function() {
+        document.querySelector('.bcard__qr-group').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.querySelectorAll('.bcard__qr')[1].classList.add('bcard__qr--highlight');
+        setTimeout(function() { document.querySelectorAll('.bcard__qr')[1].classList.remove('bcard__qr--highlight'); }, 2000);
+      });
+    </script>
+    <footer class="footer"><div class="container footer__grid"><section><img class="footer__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia"><h2>About Us</h2><p>Royal Builders Australia delivers practical, well-managed construction across Victoria.</p><ul class="registration-list"><li>Domestic Builder Individual, DB-U 102149</li><li>Commercial Builder Individual, CB-L 100739</li></ul></section><section><h2>Quick Links</h2><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="business-card.html">Digital Business Card</a></li></ul></section><section><h2>Keep in Touch</h2><p>ROYAL BUILDERS AUSTRALIA PTY LTD</p><p>Melbourne, Australia</p><p>+61 406 660 915</p><p>info@royalbuilder.com.au</p></section></div><div class="footer__bottom"><div class="container">Copyright &copy; 2026 Royal Builders Australia. All rights reserved.</div></div></footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

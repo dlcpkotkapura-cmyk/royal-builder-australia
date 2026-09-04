@@ -58,7 +58,7 @@ if (form) {
         statusEl.className = "form-status form-status--success";
         form.reset();
       } else {
-        statusEl.textContent = "Something went wrong. Please try again or call us on +61 2 5550 1845.";
+        statusEl.textContent = "Something went wrong. Please try again or call us on +61 406 660 915.";
         statusEl.className = "form-status form-status--error";
       }
     } catch (err) {
