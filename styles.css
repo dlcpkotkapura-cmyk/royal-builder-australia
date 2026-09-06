@@ -568,6 +568,124 @@ img {
   transform: translateY(-6px);
 }
 
+/* Services detail page */
+.serv {
+  background:
+    linear-gradient(180deg, rgba(18, 43, 94, 0.03), transparent 40%),
+    var(--white);
+}
+
+.serv__intro {
+  max-width: 860px;
+  margin-bottom: 46px;
+}
+
+.serv__intro h2 {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.12;
+}
+
+.serv__intro p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.serv__stack {
+  display: grid;
+  gap: 28px;
+  max-width: 1000px;
+}
+
+.serv-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 26px;
+  padding: 38px 40px 38px 34px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 38px rgba(18, 43, 94, 0.08);
+  border-radius: 14px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.serv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px rgba(18, 43, 94, 0.14);
+}
+
+.serv-card__flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--deep-crimson), #a02028);
+  color: var(--white);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.serv-card__content h2 {
+  margin: 4px 0 16px;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.12;
+}
+
+.serv-card__lead {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.serv-card__content h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--deep-crimson);
+}
+
+.serv-card__list {
+  margin: 0 0 18px;
+  padding-left: 18px;
+}
+
+.serv-card__list li {
+  margin: 0 0 8px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.serv-card__ideal {
+  margin: 0 0 24px;
+  padding: 14px 18px;
+  background: var(--soft);
+  border-left: 4px solid var(--twilight-indigo);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.serv-card__ideal strong {
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .serv__stack {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .serv-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 24px;
+  }
+}
+
 .design-hero {
   padding: 86px 0;
   background:
