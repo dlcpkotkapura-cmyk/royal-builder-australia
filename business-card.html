@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gurjeevan Sidhu — Royal Builders Australia</title>
-    <meta name="description" content="Digital business card for Gurjeevan Sidhu, CEO — Royal Builders Australia. Contact, save, or share instantly.">
+    <meta name="description" content="Digital business card for Gurjeevan Sidhu, Registered Builder — Royal Builders Australia. Contact, save, or share instantly.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -32,14 +32,14 @@
 
           <div class="bcard__hero">
             <div class="bcard__headshot-wrap">
-              <img class="bcard__headshot" src="house images/gurjeevan-headshot.jpg" alt="Gurjeevan Sidhu, CEO of Royal Builders Australia" width="200" height="200">
+              <img class="bcard__headshot" src="house images/gurjeevan-headshot.jpg" alt="Gurjeevan Sidhu, Registered Builder at Royal Builders Australia" width="200" height="200">
             </div>
             <img class="bcard__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia" width="44" height="44">
           </div>
 
           <div class="bcard__identity">
             <h1 class="bcard__name">Gurjeevan Sidhu</h1>
-            <p class="bcard__title">Chief Executive Officer</p>
+            <p class="bcard__title">Registered Builder</p>
             <p class="bcard__company">Royal Builders Australia</p>
           </div>
 
@@ -77,9 +77,8 @@
             <h2 class="bcard__section-title">What We Do</h2>
             <div class="bcard__tags">
               <span class="bcard__tag">Home Design</span>
-              <span class="bcard__tag">Commercial Fit-outs</span>
-              <span class="bcard__tag">Knockdown Rebuild</span>
-              <span class="bcard__tag">Extensions</span>
+              <span class="bcard__tag">Commercial Builder</span>
+              <span class="bcard__tag">Resident Builder</span>
             </div>
           </div>
 
@@ -129,7 +128,7 @@
             Save Contact
           </a>
 
-          <p class="bcard__footer-note">Licensed builders for homes, renovations, extensions, and commercial work across Victoria.</p>
+          <p class="bcard__footer-note">Domestic Builder Individual, DB-U 102149 · Commercial Builder Individual, CB-L 100739</p>
         </div>
       </section>
     </main>
@@ -139,19 +138,19 @@
         var msg = document.getElementById('copy-msg');
 
         /* vCard download */
-        var vcard = 'BEGIN:VCARD\nVERSION:3.0\nFN:Gurjeevan Sidhu\nN:Sidhu;Gurjeevan;;;\nORG:Royal Builders Australia\nTITLE:Chief Executive Officer\nTEL;TYPE=CELL:+61406660915\nEMAIL;TYPE=INTERNET:info@royalbuilder.com.au\nURL:https://royalbuilder.com.au\nEND:VCARD';
+        var vcard = 'BEGIN:VCARD\nVERSION:3.0\nFN:Gurjeevan Sidhu\nN:Sidhu;Gurjeevan;;;\nORG:Royal Builders Australia\nTITLE:Registered Builder\nTEL;TYPE=CELL:+61406660915\nEMAIL;TYPE=INTERNET:info@royalbuilder.com.au\nURL:https://royalbuilder.com.au\nEND:VCARD';
         var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
         document.getElementById('save-vcard').href = URL.createObjectURL(blob);
 
         /* WhatsApp share */
-        var cardText = encodeURIComponent('Royal Builders Australia \u2014 Gurjeevan Sidhu, CEO | +61 406 660 915 | royalbuilder.com.au');
+        var cardText = encodeURIComponent('Royal Builders Australia \u2014 Gurjeevan Sidhu, Registered Builder | +61 406 660 915 | royalbuilder.com.au');
         var cardUrl = encodeURIComponent(window.location.href);
         document.getElementById('share-whatsapp').href = 'https://wa.me/?text=' + cardText + '%20' + cardUrl;
 
         /* TikTok / native share */
         document.getElementById('share-tiktok').addEventListener('click', function() {
           if (navigator.share) {
-            navigator.share({ title: 'Royal Builders Australia', text: 'Gurjeevan Sidhu, CEO \u2014 Royal Builders Australia', url: window.location.href }).catch(function(){});
+            navigator.share({ title: 'Royal Builders Australia', text: 'Gurjeevan Sidhu, Registered Builder \u2014 Royal Builders Australia', url: window.location.href }).catch(function(){});
           } else {
             navigator.clipboard.writeText(window.location.href).then(function() {
               msg.textContent = 'Link copied! Open TikTok and paste it in a message.';
