@@ -1,2 +1,4 @@
 ~$*
 *.tmp
+.agents/
+skills-lock.json

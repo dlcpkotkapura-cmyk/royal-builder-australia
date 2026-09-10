@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>474A Bluff Road, Hampton | Royal Builders Australia</title>
+    <meta name="description" content="Project walkthrough — 474A Bluff Road, Hampton. New townhouse build by Royal Builders Australia.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .walkthrough { padding: 0 0 86px; }
+      .walkthrough__hero {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        max-height: 560px;
+        background: #000;
+        overflow: hidden;
+      }
+      .walkthrough__hero img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+      }
+      .walkthrough__hero img.is-active { opacity: 1; }
+
+      .walkthrough__progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(255,255,255,0.2);
+      }
+      .walkthrough__progress-bar {
+        height: 100%;
+        background: var(--deep-crimson);
+        width: 0%;
+        transition: width 0.3s linear;
+      }
+
+      .walkthrough__controls {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(0,0,0,0.65);
+        backdrop-filter: blur(8px);
+        padding: 8px 16px;
+        border-radius: 40px;
+        z-index: 5;
+      }
+      .walkthrough__btn {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.2s;
+      }
+      .walkthrough__btn:hover { background: rgba(255,255,255,0.15); }
+      .walkthrough__btn svg { width: 22px; height: 22px; }
+      .walkthrough__counter {
+        color: rgba(255,255,255,0.85);
+        font-size: 0.82rem;
+        font-weight: 600;
+        min-width: 60px;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+      }
+      .walkthrough__speed {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        padding: 4px 8px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.25);
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .walkthrough__speed:hover { border-color: #fff; color: #fff; }
+
+      .walkthrough__thumbs {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding: 16px 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+      }
+      .walkthrough__thumbs::-webkit-scrollbar { height: 4px; }
+      .walkthrough__thumbs::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+      .walkthrough__thumb {
+        flex: 0 0 auto;
+        width: 72px;
+        height: 54px;
+        border-radius: 6px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        opacity: 0.55;
+        transition: border-color 0.2s, opacity 0.2s;
+      }
+      .walkthrough__thumb.is-active { border-color: var(--deep-crimson); opacity: 1; }
+      .walkthrough__thumb:hover { opacity: 0.85; }
+      .walkthrough__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+      .walkthrough__info {
+        padding: 48px 0 0;
+      }
+      .walkthrough__info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .walkthrough__detail { padding: 24px; background: var(--soft); border-radius: 8px; }
+      .walkthrough__detail h3 { margin: 0 0 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+      .walkthrough__detail p { margin: 0; font-size: 1rem; line-height: 1.55; }
+
+      .walkthrough__cta {
+        margin-top: 48px;
+        text-align: center;
+      }
+
+      @media (max-width: 640px) {
+        .walkthrough__hero { max-height: 320px; aspect-ratio: 16/10; }
+        .walkthrough__controls { padding: 6px 12px; gap: 8px; }
+        .walkthrough__thumb { width: 56px; height: 42px; }
+        .walkthrough__info-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav class="navbar" aria-label="Primary navigation">
+      <div class="container navbar__inner">
+        <a class="brand" href="index.html" aria-label="Royal Builders Australia home">
+          <img class="brand__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia">
+        </a>
+        <button class="menu-button" aria-expanded="false" aria-label="Open navigation">Menu</button>
+        <div class="navlinks">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a class="is-active" href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <p style="margin:0 0 8px;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;opacity:0.7;">Residential Build</p>
+          <h1>474A Bluff Road, Hampton</h1>
+          <p>New townhouse build — Hampton VIC 3188. Full construction walkthrough from foundation to handover.</p>
+        </div>
+      </section>
+
+      <section class="walkthrough" aria-label="Project photo walkthrough">
+        <div class="walkthrough__hero" id="slideshow" role="region" aria-label="Slideshow viewer" aria-roledescription="slideshow">
+          <img class="is-active" src="house images/WhatsApp Image 2026-05-16 at 11.52.57 AM.jpeg" alt="Construction progress — exterior works" width="1280" height="720">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.57 AM (1).jpeg" alt="Construction progress — foundation stage" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.58 AM.jpeg" alt="Construction progress — framing" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.58 AM (1).jpeg" alt="Construction progress — structural works" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.58 AM (2).jpeg" alt="Construction progress — brickwork" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.58 AM (3).jpeg" alt="Construction progress — roofing" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.59 AM.jpeg" alt="Construction progress — external details" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.59 AM (1).jpeg" alt="Construction progress — window installation" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.52.59 AM (2).jpeg" alt="Construction progress — facade" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.00 AM.jpeg" alt="Construction progress — interior works" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.00 AM (1).jpeg" alt="Construction progress — fixing stage" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.00 AM (2).jpeg" alt="Construction progress — kitchen rough-in" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.01 AM.jpeg" alt="Construction progress — bathroom" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.01 AM (1).jpeg" alt="Construction progress — internal frames" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.01 AM (2).jpeg" alt="Construction progress — plastering" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.01 AM (3).jpeg" alt="Construction progress — tile work" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.02 AM.jpeg" alt="Construction progress — painting" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.02 AM (1).jpeg" alt="Construction progress — fitting stage" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.02 AM (2).jpeg" alt="Construction progress — flooring" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.03 AM.jpeg" alt="Construction progress — near completion" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.03 AM (1).jpeg" alt="Construction progress — final inspection" width="1280" height="720" loading="lazy">
+          <img src="house images/WhatsApp Image 2026-05-16 at 11.53.04 AM.jpeg" alt="Completed build — 474A Bluff Road Hampton" width="1280" height="720" loading="lazy">
+          <div class="walkthrough__progress"><div class="walkthrough__progress-bar" id="progress-bar"></div></div>
+          <div class="walkthrough__controls">
+            <button class="walkthrough__btn" id="btn-prev" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="walkthrough__btn" id="btn-play" aria-label="Pause slideshow">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" id="icon-pause"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" id="icon-play" style="display:none"><polygon points="5 3 19 12 5 21"/></svg>
+            </button>
+            <button class="walkthrough__btn" id="btn-next" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <span class="walkthrough__counter" id="counter" aria-live="polite">1 / 22</span>
+            <span class="walkthrough__speed" id="btn-speed" role="button" tabindex="0" aria-label="Change speed">1x</span>
+          </div>
+        </div>
+        <div class="container">
+          <div class="walkthrough__thumbs" id="thumbs" role="tablist" aria-label="Photo thumbnails"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="walkthrough__info">
+            <div class="walkthrough__info-grid">
+              <div class="walkthrough__detail">
+                <h3>Project Type</h3>
+                <p>New Townhouse Build — Residential</p>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Location</h3>
+                <p>474A Bluff Road, Hampton VIC 3188</p>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Scope</h3>
+                <p>Full construction from foundation to handover — structural framing, brickwork, roofing, internal fit-out, and finishing.</p>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Builder</h3>
+                <p>Royal Builders Australia<br>DB-U 102149 · CB-L 100739</p>
+              </div>
+            </div>
+          </div>
+          <div class="walkthrough__cta button-row" style="justify-content:center;margin-top:48px;">
+            <a class="button button--primary" href="projects.html">Back to Projects</a>
+            <a class="button button--ghost" style="border-color:var(--twilight-indigo);color:var(--twilight-indigo);" href="contact.html">Get a Quote</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <section>
+          <img class="footer__logo" src="HIGH LOGO (1).png" alt="Royal Builders Australia">
+          <h2>About Us</h2>
+          <p>Royal Builders Australia delivers practical, well-managed construction across Victoria.</p>
+          <ul class="registration-list">
+            <li>Domestic Builder Individual, DB-U 102149</li>
+            <li>Commercial Builder Individual, CB-L 100739</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="business-card.html">Digital Business Card</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Keep in Touch</h2>
+          <p>ROYAL BUILDERS AUSTRALIA PTY LTD</p>
+          <p>31 Kramer Drive, Berwick, VIC 3806</p>
+          <p>Melbourne, Australia</p>
+          <p>+61 406 660 915</p>
+          <p>info@royalbuilder.com.au</p>
+        </section>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">Copyright &copy; 2026 Royal Builders Australia. All rights reserved.</div>
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
+    <script>
+      (function() {
+        var slides = document.querySelectorAll('#slideshow img');
+        var total = slides.length;
+        var current = 0;
+        var playing = true;
+        var interval = null;
+        var delays = [3000, 1500, 750];
+        var speedIdx = 0;
+        var delay = delays[0];
+        var thumbsEl = document.getElementById('thumbs');
+        var counter = document.getElementById('counter');
+        var progressBar = document.getElementById('progress-bar');
+        var iconPause = document.getElementById('icon-pause');
+        var iconPlay = document.getElementById('icon-play');
+
+        function buildThumbs() {
+          for (var i = 0; i < total; i++) {
+            var btn = document.createElement('button');
+            btn.className = 'walkthrough__thumb' + (i === 0 ? ' is-active' : '');
+            btn.setAttribute('role', 'tab');
+            btn.setAttribute('aria-label', 'Photo ' + (i + 1));
+            btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+            var img = document.createElement('img');
+            img.src = slides[i].src;
+            img.alt = '';
+            img.loading = 'lazy';
+            btn.appendChild(img);
+            btn.addEventListener('click', (function(idx) {
+              return function() { goTo(idx); };
+            })(i));
+            thumbsEl.appendChild(btn);
+          }
+        }
+
+        function goTo(idx) {
+          slides[current].classList.remove('is-active');
+          thumbsEl.children[current].classList.remove('is-active');
+          thumbsEl.children[current].setAttribute('aria-selected', 'false');
+          current = idx;
+          slides[current].classList.add('is-active');
+          thumbsEl.children[current].classList.add('is-active');
+          thumbsEl.children[current].setAttribute('aria-selected', 'true');
+          counter.textContent = (current + 1) + ' / ' + total;
+          progressBar.style.width = ((current + 1) / total * 100) + '%';
+          thumbsEl.children[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          if (playing) restartTimer();
+        }
+
+        function next() { goTo((current + 1) % total); }
+        function prev() { goTo((current - 1 + total) % total); }
+
+        function restartTimer() {
+          clearInterval(interval);
+          interval = setInterval(next, delay);
+        }
+
+        function togglePlay() {
+          playing = !playing;
+          if (playing) {
+            iconPause.style.display = '';
+            iconPlay.style.display = 'none';
+            restartTimer();
+          } else {
+            iconPause.style.display = 'none';
+            iconPlay.style.display = '';
+            clearInterval(interval);
+          }
+        }
+
+        function cycleSpeed() {
+          speedIdx = (speedIdx + 1) % delays.length;
+          delay = delays[speedIdx];
+          var labels = ['1x', '2x', '4x'];
+          document.getElementById('btn-speed').textContent = labels[speedIdx];
+          if (playing) restartTimer();
+        }
+
+        document.getElementById('btn-play').addEventListener('click', togglePlay);
+        document.getElementById('btn-next').addEventListener('click', next);
+        document.getElementById('btn-prev').addEventListener('click', prev);
+        document.getElementById('btn-speed').addEventListener('click', cycleSpeed);
+        document.getElementById('btn-speed').addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cycleSpeed(); }
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowRight') next();
+          else if (e.key === 'ArrowLeft') prev();
+          else if (e.key === ' ') { e.preventDefault(); togglePlay(); }
+        });
+
+        var touchStartX = 0;
+        document.getElementById('slideshow').addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        document.getElementById('slideshow').addEventListener('touchend', function(e) {
+          var diff = e.changedTouches[0].screenX - touchStartX;
+          if (Math.abs(diff) > 50) { diff < 0 ? next() : prev(); }
+        }, { passive: true });
+
+        buildThumbs();
+        restartTimer();
+        progressBar.style.width = (1 / total * 100) + '%';
+      })();
+    </script>
+  </body>
+</html>
