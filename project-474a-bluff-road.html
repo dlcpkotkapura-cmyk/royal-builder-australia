@@ -128,6 +128,20 @@
       .walkthrough__detail { padding: 24px; background: var(--soft); border-radius: 8px; }
       .walkthrough__detail h3 { margin: 0 0 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
       .walkthrough__detail p { margin: 0; font-size: 1rem; line-height: 1.55; }
+      .walkthrough__detail ul { margin: 0; padding-left: 18px; font-size: 1rem; line-height: 1.7; color: var(--ink); }
+      .walkthrough__detail li { margin-bottom: 2px; }
+
+      .walkthrough__features { padding: 56px 0 0; }
+      .walkthrough__features h2 {
+        margin: 0 0 24px;
+        font-size: clamp(26px, 3.4vw, 38px);
+        line-height: 1.12;
+      }
+      .walkthrough__features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
 
       .walkthrough__cta {
         margin-top: 48px;
@@ -139,6 +153,12 @@
         .walkthrough__controls { padding: 6px 12px; gap: 8px; }
         .walkthrough__thumb { width: 56px; height: 42px; }
         .walkthrough__info-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 820px) {
+        .walkthrough__features-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 560px) {
+        .walkthrough__features-grid { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -236,6 +256,53 @@
               </div>
             </div>
           </div>
+
+          <div class="walkthrough__features">
+            <h2>Property Features</h2>
+            <div class="walkthrough__features-grid">
+              <div class="walkthrough__detail">
+                <h3>Bedrooms &amp; Bathrooms</h3>
+                <ul>
+                  <li>Built-in wardrobes</li>
+                </ul>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Toilets</h3>
+                <ul>
+                  <li>4 toilets</li>
+                </ul>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Parking</h3>
+                <ul>
+                  <li>2 garage spaces</li>
+                  <li>Remote garage</li>
+                </ul>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Heating &amp; Cooling</h3>
+                <ul>
+                  <li>Air conditioning</li>
+                </ul>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Energy Efficiency &amp; Sustainability</h3>
+                <ul>
+                  <li>Water tank</li>
+                </ul>
+              </div>
+              <div class="walkthrough__detail">
+                <h3>Indoor Features</h3>
+                <ul>
+                  <li>Alarm system</li>
+                  <li>Ducted vacuum system</li>
+                  <li>Floorboards</li>
+                  <li>Study</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           <div class="walkthrough__cta button-row" style="justify-content:center;margin-top:48px;">
             <a class="button button--primary" href="projects.html">Back to Projects</a>
             <a class="button button--ghost" style="border-color:var(--twilight-indigo);color:var(--twilight-indigo);" href="contact.html">Get a Quote</a>
