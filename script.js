@@ -1,3 +1,38 @@
+// Analytics config — paste your IDs to start tracking (leave empty to disable)
+const GA4_MEASUREMENT_ID = ""; // e.g. "G-XXXXXXXXXX"
+const META_PIXEL_ID = ""; // e.g. "123456789012345"
+
+(function loadAnalytics() {
+  if (GA4_MEASUREMENT_ID) {
+    const gtagScript = document.createElement("script");
+    gtagScript.async = true;
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=" + GA4_MEASUREMENT_ID;
+    document.head.appendChild(gtagScript);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", GA4_MEASUREMENT_ID);
+  }
+
+  if (META_PIXEL_ID) {
+    const fbScript = document.createElement("script");
+    fbScript.async = true;
+    fbScript.src = "https://connect.facebook.net/en_US/fbevents.js";
+    document.head.appendChild(fbScript);
+    window.fbq = window.fbq || function () {
+      (fbq.callMethod ? fbq.callMethod : fbq.queue).push(arguments);
+    };
+    if (!window._fbq) window._fbq = fbq;
+    fbq.push = fbq;
+    fbq.loaded = true;
+    fbq.version = "2.0";
+    fbq.queue = [];
+    fbq("init", META_PIXEL_ID);
+    fbq("track", "PageView");
+    fbq("track", "ViewContent");
+  }
+})();
+
 document.querySelectorAll("[data-view-toggle]").forEach((button) => {
   button.addEventListener("click", () => {
     const board = button.closest("[data-design-board]");

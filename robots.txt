@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Allow AI Search Engines to index projects
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://royalbuilder.com.au/sitemap.xml
