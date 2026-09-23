@@ -68,6 +68,33 @@ document.querySelectorAll(".menu-button").forEach((button) => {
   });
 });
 
+// Scroll-reveal animation for project cards and feature sections
+const scrollReveal = () => {
+  const items = document.querySelectorAll(".project-card, .feature-card, .reveal");
+  if (!items.length) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const delay = (index * 80) % 240;
+          entry.target.style.transitionDelay = delay + "ms";
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  items.forEach((item) => item.classList.add("reveal-on-scroll"));
+  items.forEach((item) => observer.observe(item));
+};
+scrollReveal();
+
 const form = document.querySelector(".contact-form");
 if (form) {
   const statusEl = form.querySelector(".form-status");
