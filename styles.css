@@ -504,6 +504,7 @@ img {
 }
 
 .project-card {
+  display: flex;
   overflow: hidden;
 }
 
@@ -514,11 +515,20 @@ img {
 }
 
 .project-card div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 24px;
 }
 
+.project-card p {
+  flex: 1;
+}
+
 .project-card__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   text-decoration: none;
   color: inherit;
   transition: box-shadow 0.3s, transform 0.3s;
