@@ -429,6 +429,7 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 24px;
+  align-items: stretch;
 }
 
 .reveal-on-scroll {
@@ -531,8 +532,10 @@ img {
 
 .project-card img {
   width: 100%;
+  height: clamp(220px, 30vw, 280px);
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .project-card div {
@@ -542,14 +545,31 @@ img {
   padding: 24px;
 }
 
+.project-card h2 {
+  min-height: 2.6em;
+  margin: 0 0 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .project-card p {
   flex: 1;
+  min-height: 4.5em;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .project-card__link {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   text-decoration: none;
   color: inherit;
   transition: box-shadow 0.3s, transform 0.3s;
@@ -566,7 +586,8 @@ img {
 }
 
 .project-card__cta {
-  margin-top: 16px;
+  margin-top: auto;
+  align-self: flex-start;
   font-size: 0.78rem;
   padding: 0 16px;
   min-height: 40px;
